@@ -8,3 +8,54 @@ body {
 h1{
   color: pink;
 }
+
+.business{
+  width: 350px;
+  border: 1px solid #fff;
+  /* margin-left: 20px; */
+  height: 350px;
+  padding-left: 20px;
+  padding-top: 20px;
+}
+.business-name{
+  margin-bottom: -13px;
+}
+.business-img{
+  height: 200px;
+  width: 300px;
+  margin-bottom: -20px;
+
+}
+.info-container{
+  width: 400px;
+  display: grid;
+  grid-template-columns: 45% 45%;
+  grid-template-rows: 15% 15% 15%;
+  justify-content: space-between;
+}
+
+.category{
+  font-size: 1.2em;
+  color: goldenrod;
+  text-transform: uppercase;
+}
+.rating{
+  color: goldenrod;
+}
+
+.container{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+}
+
+.bussiness-list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    /* padding: 20px; */
+    margin: 20px;
+    width: 70%;
+}
