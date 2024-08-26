@@ -69,7 +69,7 @@ const businessList = [
         category: 'Russian',
         rating: 3.7,
         reviewCount: 87
-    },
+    }
     
 ]
 
@@ -77,7 +77,7 @@ const BusinessList = ()=>{
     return (
         <div className="container">
             <div className="bussiness-list">
-                {businessList.map(business => <Business business={business} />)}
+                {businessList.map(business => <Business business={business}/>)}
             </div>
         </div>
         
