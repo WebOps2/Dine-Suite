@@ -8,15 +8,15 @@ const searchOptions = {
     'Highest Rated': 'rating',
     'Most reviewed':'review_count'
 }
+
+
 const Search = () =>{
 
     const SearchOption = ()=>{
         const arrOptions = Object.keys(searchOptions)
         return arrOptions.map(option =>{
             const optionVal = searchOptions[option]
-            return (
-                <li key={optionVal}>{option}</li>
-            )
+            return <li key={optionVal}>{option}</li>
         })
     }
 
