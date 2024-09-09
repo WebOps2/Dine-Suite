@@ -14,7 +14,7 @@ const Business = (props) =>{
                     <h2 className='category'>{props.business.category}</h2>
                 </div>
                 <div className='sub-container'>
-                    <p>{props.city}, {props.business.state}</p>
+                    <p>{props.business.city}, {props.business.state}</p>
                     <h4 className='rating'>{props.business.rating} stars</h4>
                 </div>
                 <div className='sub-container'>

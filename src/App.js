@@ -67,6 +67,39 @@ export const businessList = [
         category: 'Russian',
         rating: 3.7,
         reviewCount: 87
+    },
+    {
+        imageSrc: img,
+        name: 'The Rustic Plate',
+        address: '45 Riverbend Lane',
+        city: 'Birchwood',
+        state: 'ON',
+        zip: 'MP5J 1N6',
+        category: 'Russian',
+        rating: 3.7,
+        reviewCount: 87
+    },
+    {
+        imageSrc: img,
+        name: 'The Rustic Plate',
+        address: '45 Riverbend Lane',
+        city: 'Birchwood',
+        state: 'ON',
+        zip: 'MP5J 1N6',
+        category: 'Russian',
+        rating: 3.7,
+        reviewCount: 87
+    },
+    {
+        imageSrc: img,
+        name: 'The Rustic Plate',
+        address: '45 Riverbend Lane',
+        city: 'Birchwood',
+        state: 'ON',
+        zip: 'MP5J 1N6',
+        category: 'Russian',
+        rating: 3.7,
+        reviewCount: 87
     }
     
 ]

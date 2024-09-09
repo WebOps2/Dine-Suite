@@ -1,5 +1,4 @@
-import React from "react";
-import "./index.css";
+import React, { useState } from "react";
 
 
 
@@ -12,11 +11,36 @@ const searchOptions = {
 
 const Search = () =>{
 
+    const [searchInput, setSearchInput] = useState('')
+    const [locationInput, setLocationInput] = useState('')
+    const [searchValues, setSearchValues] = useState('best_match')
+
+    const handleSortByChange = (sortByOption) => {
+        setSearchValues(sortByOption);
+      };
+
+    const handleSearchByChange = (e) =>{
+        setSearchInput(e.target.value)
+    }
+    const handleLocationByChange = (e) =>{
+        setLocationInput(e.target.value)
+    }
+
+    const handleButtonByChange = (event) =>{
+        event.preventDefault()
+        setSearchInput('')
+        setLocationInput('')
+        console.log(`Searching Yelp with ${searchInput}, ${locationInput}, ${searchValues} `)
+    }
+
     const SearchOption = ()=>{
         const arrOptions = Object.keys(searchOptions)
         return arrOptions.map(option =>{
             const optionVal = searchOptions[option]
-            return <li key={optionVal}>{option}</li>
+            return <li key={optionVal}
+            onClick={()=>{
+                handleSortByChange(optionVal)
+            }}>{option}</li>
         })
     }
 
@@ -28,13 +52,16 @@ const Search = () =>{
                     <ul>{SearchOption()}</ul>
                     <hr></hr>
                 </div>
-                <div className="auto">
-                    <input type="text" placeholder="Search Business" id="search-business"></input>
-                    <input type="text" placeholder="Where ?"></input>
-                </div>
-                <div className="btn">
-                    <button>Let's Go</button>
-                </div>
+                <form className="auto" onSubmit={handleButtonByChange}>
+                    <div className="auto-wrapper">
+                        <input type="text" placeholder="Search Business" id="search-business" onChange={handleSearchByChange} value={searchInput}></input>
+                        <input type="text" placeholder="Where ?" onChange={handleLocationByChange} value={locationInput}></input>
+                    </div>
+                    <div className="btn">
+                        <button>Let's Go</button>
+                    </div>
+                </form>
+                
             </div>
         </div>
        

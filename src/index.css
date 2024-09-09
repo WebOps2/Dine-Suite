@@ -92,11 +92,22 @@ body {
 .search-option-container li:hover{
   opacity: 0.8;
 }
+.search-container li:active{
+  color: goldenrod;
+}
+
 .auto{
   margin: auto;
   display: flex;
   gap: 20px;
   margin-top: 20px;
+  /* width: 100%; */
+  flex-direction: column;
+}
+
+.auto-wrapper{
+  display: flex;
+  gap: 20px;
 }
 
 input{
@@ -125,6 +136,7 @@ button{
 button:hover{
   opacity: 0.9;
 }
+
 hr{
   width: 88%;
   /* margin-left: 140px; */
