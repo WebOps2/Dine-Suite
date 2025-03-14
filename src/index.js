@@ -1,18 +1,37 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
 import BusinessList from './businessList.js';
 import './index.css';
 import Search from './Search.js';
+import Yelp from './Utility.js';
 
-const app = ReactDOM.createRoot(document.getElementById('app'));
-app.render(
-  <Search />
-)
+function App() {
+  const [businesses, setBusinesses] = useState([]);
+  const [searchParams, setSearchParams] = useState({
+    term: 'Pizza', // Default search term
+    location: 'New York',
+    sortBy: 'best_match',
+  });
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <BusinessList/>
-);
+  useEffect(() => {
+    Yelp.search(searchParams.term, searchParams.location, searchParams.sortBy)
+      .then(setBusinesses)
+      .catch((error) => console.error('Error fetching businesses:', error));
+  }, [searchParams]);
+
+  const searchYelp = (term, location, sortBy) => {
+    setSearchParams({ term, location, sortBy });
+  };
+
+  return (
+    <div className="app">
+      <h1>Ravenous</h1>
+      <Search onSearch={searchYelp} />
+      <BusinessList businesses={businesses} />
+    </div>
+  );
+}
+
+export default App;
 
 
 

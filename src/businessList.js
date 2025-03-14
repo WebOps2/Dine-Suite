@@ -1,16 +1,21 @@
 import React from "react";
-import { businessList } from "./App";
 import Business from './Business';
 
-const BusinessList = ()=>{
+const BusinessList = ({ businesses })=>{
     return (
         <div className="container">
-            <div className="bussiness-list">
-                {businessList.map((business, index) => <Business  business={business} key={index} />)}
+            <div className="BusinessList">
+                {businesses.length > 0 ? (
+                    businesses.map((business) => (
+                    <Business key={business.id} business={business} />
+                    ))
+                ) : (
+                    <p>No results found. Try a different search.</p>
+                )}
             </div>
         </div>
         
     )
 }
-
+// bussiness-list
 export  default BusinessList; 
